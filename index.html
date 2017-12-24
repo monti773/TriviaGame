@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+  
+
+  <body>
+<h1>This is best quiz on the internet!</h1>
+
+
+<form id = "quiz" name = "quiz">
+
+
+<p class = "questions">What is the capital of Illinois?</p>
+<input type = "radio" id = "mc" name = "question1" value = "Springfield"> Springfield<br> 
+<input type = "radio" id = "mc" name = "question1" value = "Stringfield"> Stringfield<br>
+
+<p class = "questions">What is the capital of Connecticut?</p>
+<input type = "radio" id = "mc" name = "question2" value = "Hartford"> Hartford<br>
+<input type = "radio" id = "mc" name = "question2" value = "Heartford"> Heartford<br>
+
+<p class = "questions">What is the capital of New York?</p>
+
+<input type = "radio" id = "mc" name = "question3" value = "Albany"> Albany<br>
+<input type = "radio" id = "mc" name = "question3" value = "All Benny's"> All Benny's<br>
+
+
+<input id = "button" type = "button" value = "I'm finished!" onclick = "check();">
+
+
+</form>
+
+<div id = "after_submit">
+<p id = "number_correct"></p>
+<p id = "message"></p>
+<img id = "picture">
+</div>
+
+
+<!--   <script src="assets/javascript/apps.js">
+    
+  function countdown(secs, elem){
+    var element = document.getElementById(elem);
+    element.innerHTML = "You have '+secs+' seconds";
+    if (secs < 1){
+      clearTimeout(timer);
+    }
+    secs--;
+    var timer = setTimeout('countdown('+secs+', "'+elem+'")', 1000);
+}
+ <div id="status"></div>
+
+  </script> -->
+ 
+</body>
+</html>
+
+<script>
+function countDown(secs, elem) {
+    var element = document.getElementById(elem);
+    element.innerHTML = "You Have " + secs + " seconds";
+    if (secs < 1) {
+        clearTimeout(timer);
+        element.innerHTML = '<h2>Countdown Complete!</h2>';
+        // element.innerHTML += '<a href="#">Click here now</a>';
+    }
+    secs--;
+    var timer = setTimeout('countDown(' + secs + ',"' + elem + '")', 1000);
+}
+</script>
+<div id="status"></div>
+<script>
+countDown(10, "status");
+</script>
